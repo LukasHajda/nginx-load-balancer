@@ -15,16 +15,16 @@ cd <repository-directory>
 Step 2: Build and Run the Containers with Docker Compose
 To build and start the containers, run the following command:
 
-```docker-compose up --build```
-This will build the necessary images and start the containers defined in the docker-compose.yml file. The --build flag ensures that the images are rebuilt if any changes were made.
+```docker-compose up -d --build```
+This will build the necessary images and start the containers defined in the docker-compose.yml file. The `--build` flag ensures that the images are rebuilt if any changes were made.
 
 Step 3: Access the Application
 Once the containers are up and running, you can access the load-balanced application in your browser at:
 
 ```http://localhost:8080```
-This URL will be served by Nginx, which is configured to distribute traffic across the app1, app2, app3, and app4 Flask application containers.
+This URL will be served by Nginx, which is configured to distribute traffic across the `app1`, `app2`, `app3`, and `app4` Flask application containers.
 
 Each container will return a message like:
 
 ```Hello from: app<CONTAINER_NAME>```
-The CONTAINER_NAME environment variable will dynamically change based on the container handling the request.
+The `CONTAINER_NAME` environment variable will dynamically change based on the container handling the request.
